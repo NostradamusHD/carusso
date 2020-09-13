@@ -1,0 +1,67 @@
+.checkout_coupon {
+  margin: 30px 0;
+  padding: 25px;
+  border: 2px dashed rgba(129, 129, 129, 0.2);
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  p {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba($color-secondary, 0.7);
+    margin-bottom: 1.4rem;
+  }
+
+  .input-text {
+    box-shadow: none;
+    border: 0;
+    border-bottom: 1px solid rgba($color-primary, 0.1);
+    padding: 0.6rem 0;
+    font-size: 14px;
+    color: $color-primary;
+    margin-bottom: 0;
+
+    &::placeholder {
+      color: $color-primary;
+    }
+  }
+
+  .button {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e0b252;
+    text-transform: uppercase;
+    margin-bottom: 0;
+
+    &:hover {
+      background: #876c32;
+    }
+  }
+}
+
+@media (min-width: 570px) {
+  .checkout_coupon {
+    max-width: 500px;
+    justify-content: center;
+    align-items: flex-end;
+
+    .form-row {
+      width: auto;
+      margin-bottom: 0;
+    }
+
+    .input-text {
+      width: 250px;
+    }
+
+    .button {
+      width: auto;
+    }
+  }
+}

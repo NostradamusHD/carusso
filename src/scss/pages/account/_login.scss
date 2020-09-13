@@ -1,0 +1,107 @@
+.u-columns {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .u-column1 {
+    width: 100%;
+  }
+
+  .u-column2 {
+    width: 100%;
+  }
+
+  h2 {
+    font-family: $font-montserrat;
+    color: $color-primary;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .carusso-message-mail {
+    width: 100%;
+    background: rgba($color-primary, 0.05);
+    padding: 0.5rem 1rem;
+    font-family: $font-montserrat;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba($color-primary, 0.8);
+  }
+
+  .woocommerce-form-login,
+  .woocommerce-form-register {
+    padding: 1rem 0;
+
+    label {
+      font-weight: 500;
+      font-family: $font-montserrat;
+      cursor: pointer;
+
+      .required {
+        color: red;
+      }
+    }
+
+    input {
+      box-shadow: none;
+      color: rgba($color-primary, 0.8);
+      font-size: 14px;
+      border: none;
+      border-bottom: 1px solid rgba($color-primary, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    &__submit {
+      width: 100%;
+      height: 50px;
+      text-transform: uppercase;
+      background: $color-primary;
+      margin: 1rem 0 0;
+
+      &:hover {
+        background: #000;
+      }
+    }
+
+    .lost_password {
+      text-align: right;
+
+      a {
+        font-family: $font-montserrat;
+        color: rgba($color-secondary, 0.7);
+        font-weight: 500;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .woocommerce-privacy-policy-text {
+    color: rgba($color-primary, 0.7);
+    font-weight: 500;
+    font-size: 13px;
+    font-family: $font-montserrat;
+  }
+}
+
+@media (min-width: 750px) {
+  .u-columns {
+    .u-column1 {
+      width: 50%;
+      border-right: 1px solid rgba($color-primary, 0.1);
+    }
+
+    .u-column2 {
+      width: 50%;
+    }
+
+    h2 {
+      padding: 0 2rem;
+    }
+
+    .woocommerce-form-login,
+    .woocommerce-form-register {
+      padding: 1rem 2rem;
+    }
+  }
+}

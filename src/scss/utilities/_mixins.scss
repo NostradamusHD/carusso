@@ -1,0 +1,34 @@
+@mixin flex-align-content($x: null, $y: null) {
+  display: flex;
+
+  @if ($x != null) {
+    justify-content: $x;
+  }
+
+  @if ($y != null) {
+    align-items: $y;
+  }
+
+  @content;
+}
+
+@mixin button-theme($border: 0, $background: $color-primary, $color: $white,$color-border: $color-primary) {
+  background-color: $background;
+  color: $color;
+  border: $border solid $color-border;
+  padding: 0.95rem 1.5rem;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  font-family: $font-montserrat;
+  font-weight: 600;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+@mixin object-fit($value) {
+  width: 100%;
+  height: 100%;
+  object-fit: $value;
+}

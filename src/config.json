@@ -1,0 +1,47 @@
+{
+  "entry": {
+    "styles": [
+      "src/scss/wp_login_styles.scss",
+      "src/scss/main.scss"
+    ],
+    "js": [
+      "src/js/main.js",
+      "src/js/sliders/sliders-homepage.js",
+      "src/js/sliders/slider-contact.js",
+      "src/js/sliders/slideshow-shop.js"
+    ]
+  },
+  "publicPath": "app/static",
+  "globalResources": {
+    "styles": "src/scss/**/*.scss",
+    "js": "src/js/**/*.js",
+    "images": "src/images/**/*.{jpg,jpeg,png,svg,ico}",
+    "php": "**/*.php"
+  },
+  "proxy": "http://localhost/carusso",
+  "ignoreFoldersDevelopment": [
+    "src/**/*",
+    "!src/config.json",
+    "!src/{images,scss,js/!(libs),build}",
+    "!src/{images,scss,js/!(libs),build}/**/*"
+  ],
+  "ignoreFoldersProduction": [
+    "src/**/*",
+    "!src/config.json",
+    "!src/{images,scss,js,build}",
+    "!src/{images,scss,js,build}/**/*",
+    "!src/fonts/awesome",
+    "!src/fonts/awesome/**/*"
+  ],
+  "compressFolder": [
+    "**/*",
+    "**/.*",
+    ".*",
+    "!node_modules{,/**}",
+    "!vendor{,/**}",
+    "!bundled{,/**}",
+    "!package-lock.json",
+    "!*.lock",
+    "!*.log"
+  ]
+}

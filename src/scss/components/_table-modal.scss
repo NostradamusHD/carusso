@@ -1,0 +1,101 @@
+.modal {
+  width: 100%;
+  height: 100%;
+
+  &__link {
+    color: $color-primary;
+    margin-left: 1rem;
+    text-decoration: underline;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 1.5rem;
+    max-width: 250px;
+    margin: 0 auto;
+    font-weight: 500;
+    color: $color-primary;
+  }
+
+  &__body {
+    padding: 2rem;
+  }
+
+  &__logo {
+    width: 170px;
+    height: 70px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+
+    img {
+      @include object-fit(contain);
+    }
+  }
+
+  &-table {
+    font-size: 14px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+
+    th {
+      border-bottom: 1px solid rgba($color-primary, 0.6);
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba($color-primary, 0.8);
+      padding: 1rem 0.5rem;
+      text-align: center;
+    }
+
+    td {
+      color: rgba($color-primary, 0.6);
+      font-weight: 500;
+      font-size: 13px;
+      padding: 0.5rem 0;
+    }
+
+    tbody {
+      tr {
+        &:nth-child(2n - 1) {
+          background: rgba($color-primary, 0.05);
+        }
+      }
+    }
+  }
+
+  &__footer {
+    figure {
+      width: 100%;
+      height: 200px;
+      margin: 1rem 0;
+
+      img {
+        @include object-fit(contain);
+      }
+    }
+
+    ol {
+      li {
+        margin-bottom: 1rem;
+        font-size: 13px;
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+@media (min-width: 520px) {
+  .modal {
+    &__title {
+      max-width: 400px;
+    }
+
+    &__footer {
+      ol {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.woocommerce-EditAccountForm,
+.woocommerce-ResetPassword {
+  .woocommerce-form-row {
+    border: none !important;
+
+    .woocommerce-Input {
+      box-shadow: none;
+      border: none;
+      border-bottom: 1px solid rgba($color-primary, 0.1);
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    > span {
+      em {
+        font-weight: 500;
+        font-size: 12px;
+      }
+    }
+  }
+
+  fieldset {
+    margin: 2rem 0;
+    border: 3px solid rgba($color-primary, 0.1);
+    padding: 2rem;
+
+    legend {
+      margin-bottom: 0;
+      padding-right: 15px;
+      padding-left: 15px;
+      width: auto;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+    }
+
+    .password-input {
+      width: 100%;
+    }
+  }
+
+  .woocommerce-Button {
+    background: $color-primary;
+    text-transform: uppercase;
+
+    &:hover {
+      background: $black;
+    }
+  }
+}
+
+.woocommerce-address-fields {
+  &__field-wrapper {
+    .country_to_state,
+    .state_select {
+      box-shadow: none;
+      border: 0;
+      padding: 0.5rem 0 0.3rem 0.5rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .button {
+    background: $color-primary;
+  }
+}
+
+.woocommerce-form-login {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+
+  p {
+    font-size: 13px;
+    color: rgba($color-primary, 0.7);
+    font-weight: 500;
+  }
+
+  .form-row {
+    label {
+      font-weight: 500;
+      color: rgba($color-primary, 0.7);
+      cursor: pointer;
+    }
+
+    .input-text {
+      box-shadow: none;
+      border: none;
+      background: none;
+      border-bottom: 1px solid rgba($color-primary, 0.1);
+    }
+
+    button {
+      background: $color-primary;
+      width: 100%;
+
+      &:hover {
+        background: #000;
+      }
+    }
+  }
+
+  @media (min-width: 750px) {
+    .form-row {
+      button {
+        width: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.carusso-single {
+  .woocommerce-product-gallery {
+    width: 100%;
+    position: relative;
+
+    &__trigger {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      visibility: hidden;
+      z-index: 20;
+
+      &::before {
+        background: $white;
+        position: absolute;
+        right: 0;
+        width: 40px;
+        box-shadow: 10px 10px 26px -10px rgba(118, 118, 118, 0.5);
+        height: 40px;
+        display: flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        visibility: visible;
+        content: "\f002";
+        font-family: $font-awesome;
+        font-weight: 900;
+        color: $color-primary;
+        font-size: 1rem;
+      }
+    }
+
+    &__image {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .flex-viewport {
+      width: 100%;
+    }
+
+    .flex-control-nav {
+      list-style: none;
+      margin: 1rem 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      width: auto;
+
+      li {
+        width: 32%;
+        max-width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(49, 49, 49, 0.1);
+        cursor: pointer;
+        overflow: hidden;
+        padding: 0.5rem;
+        margin: 0 0.3rem;
+
+        img {
+          width: 100%;
+          max-width: 100px;
+          max-height: 100px;
+          object-fit: cover;
+          transition: all 0.3s;
+        }
+
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .carusso-single {
+    .woocommerce-product-gallery {
+      width: 45%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .carusso-single {
+    .onsale {
+      right: 0;
+    }
+
+    .woocommerce-product-gallery {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      .flex-viewport {
+        width: 78%;
+      }
+
+      .flex-control-nav {
+        width: 18%;
+        flex-wrap: wrap;
+        margin: 0 2% 0;
+        position: absolute;
+        left: 0;
+
+        li {
+          width: 100%;
+          margin: 0 0 0.5rem;
+        }
+      }
+    }
+  }
+}

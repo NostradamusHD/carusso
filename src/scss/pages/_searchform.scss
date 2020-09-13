@@ -1,0 +1,68 @@
+.woocommerce-product-search {
+  width: 100%;
+  background: $white;
+  margin-top: -1rem;
+  display: flex;
+  padding: 1rem;
+  box-shadow: 0 -1px 9px rgba(0, 0, 0, 0.17);
+
+  .search-field {
+    box-shadow: none;
+    border: 0;
+    margin-bottom: 0;
+  }
+
+  button {
+    width: 40px;
+    height: 40px;
+    color: #777;
+    font-size: 20px;
+  }
+
+  .close-button {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .woocommerce-product-search {
+    min-width: 100vw;
+    height: calc(100vh - 300px);
+    position: fixed;
+    padding: 0;
+    right: 0;
+    top: 100vh;
+    margin: 0;
+    box-shadow: 2px -1px 33px -12px rgba(0, 0, 0, 0.61);
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+    z-index: 50;
+
+    &.active {
+      top: 300px;
+    }
+
+    .search-field {
+      width: 90%;
+      margin: 0 auto;
+      padding: 4rem;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      border-bottom: 1px solid rgba(#1e1e1e, 0.2);
+
+      &::placeholder {
+        color: #1e1e1e;
+      }
+    }
+
+    button {
+      display: none;
+    }
+
+    .close-button {
+      display: inline-block;
+    }
+  }
+}

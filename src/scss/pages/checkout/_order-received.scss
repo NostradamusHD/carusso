@@ -1,0 +1,224 @@
+.woocommerce-order {
+  .woocommerce-thankyou-order-received {
+    width: 100%;
+    text-align: center;
+    border: 2px dashed rgba($color-primary, 0.3);
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: $font-montserrat;
+    padding: 0.7rem;
+    color: $color-primary;
+  }
+
+  .woocommerce-order-overview.woocommerce-thankyou-order-details.order_details {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      width: 100%;
+      border-bottom: 1px solid rgba($color-primary, 0.1);
+      padding: 1rem;
+      text-align: center;
+      font-family: $font-montserrat;
+      color: rgba($color-primary, 0.7);
+      font-size: 14px;
+      font-weight: 500;
+
+      strong {
+        display: block;
+        font-weight: 500;
+        margin-top: 0.5rem;
+        color: $color-primary;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .woocommerce-order-details,
+  .woocommerce-order-downloads {
+    width: 100%;
+    margin: 2rem 0;
+
+    &__title {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $color-primary;
+      font-family: $font-montserrat;
+      margin-bottom: 1rem;
+    }
+
+    .woocommerce-table--order-details {
+      width: 100%;
+      margin: 1rem 0;
+      border-collapse: collapse;
+
+      thead {
+        background: none;
+        border: none;
+        font-family: $font-montserrat;
+        border-bottom: 3px solid rgba($color-primary, 0.1);
+
+        tr {
+          th {
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 1rem;
+            text-align: left;
+
+            &:nth-child(2) {
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      tbody {
+        border: none;
+
+        tr {
+          font-size: 14px;
+
+          td {
+            &:nth-child(2) {
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      tfoot {
+        background: none;
+        border: none;
+
+        tr {
+          th {
+            font-weight: 400;
+            font-size: 14px;
+            text-align: left;
+          }
+
+          td {
+            font-size: 14px;
+            text-align: right;
+            color: rgba($color-primary, 0.8);
+          }
+
+          &:last-child {
+            th {
+              text-transform: uppercase;
+              font-size: 1.3rem;
+              font-weight: 500;
+            }
+
+            td {
+              font-size: 1.3rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      tr {
+        border-bottom: 1px solid rgba($color-primary, 0.1);
+        font-family: $font-montserrat;
+        color: $color-primary;
+
+        td,
+        th {
+          padding: 1rem 0.5rem;
+
+          a {
+            color: $color-primary;
+
+            &:hover {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+
+    .order-again {
+      margin: 2rem 0;
+
+      a {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: $color-primary;
+      }
+    }
+  }
+
+  .woocommerce-columns--addresses {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .woocommerce-customer-details,
+  .woocommerce-column--billing-address,
+  .woocommerce-column--shipping-address {
+    width: 100%;
+
+    .woocommerce-column__title {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $color-primary;
+      font-family: $font-montserrat;
+      margin-bottom: 1rem;
+    }
+
+    address {
+      font-family: $font-montserrat;
+      font-weight: 500;
+      color: rgba($color-primary, 0.8);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+  }
+
+  section,
+  p {
+    max-width: 700px;
+    margin: 3rem auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .woocommerce-order {
+    .woocommerce-thankyou-order-received {
+      font-size: 1.8rem;
+      padding: 1rem 2rem;
+    }
+
+    .woocommerce-order-overview.woocommerce-thankyou-order-details.order_details {
+      flex-wrap: nowrap;
+
+      li {
+        display: inline-block;
+        width: 100%;
+        border-bottom: none;
+        border-right: 1px solid rgba($color-primary, 0.1);
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    .woocommerce-column--billing-address,
+    .woocommerce-column--shipping-address {
+      width: 50%;
+    }
+  }
+}

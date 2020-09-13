@@ -1,0 +1,3 @@
+<div class="map"> <!-- start//Google Map -->
+    <iframe width="100%" height="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.917959017392!2d-79.0319997856199!3d-8.109836183383308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d84ba8aa8ab%3A0x5b9f1718a9b50a8a!2sJir%C3%B3n%20Orbegoso%20272%2C%20Trujillo%2013001!5e0!3m2!1ses-419!2spe!4v1596149461186!5m2!1ses-419!2spe" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div><!-- end//Google Map -->
