@@ -44,25 +44,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_5f382f8b26a6f",
-            "label": "Texto",
-            "name": "headband_text",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -82,5 +63,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1597528536
+    "modified": 1600053976
 }

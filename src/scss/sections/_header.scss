@@ -246,7 +246,7 @@
     max-width: 450px;
     margin: 0 auto;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
     color: $white;
     text-align: center;
@@ -265,7 +265,8 @@
     }
   }
 
-  &__paragraph {
+  &__paragraph,
+  p {
     width: 100%;
     max-width: 450px;
     margin: 0 auto;
@@ -280,6 +281,10 @@
   @media (min-width: 1024px) {
     &__slider {
       height: 280px;
+    }
+
+    &__title {
+      font-size: 3rem;
     }
   }
 }

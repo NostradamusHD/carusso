@@ -1,13 +1,13 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>" />
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="<?= get_theme_file_uri('/static/images/icons/caruso-isotipo.png')?>">
-    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
-    <?php wp_head() ?>
+    <?php
+    /**
+     * Partial - Head
+     * @return partial
+     */
+    get_template_part('template-parts/partials/head/head');
+    ?>
 </head>
 
 <body <?php body_class(); ?> >
@@ -20,24 +20,24 @@
         <header class="header header--light">
             <?php 
             /**
-             * Component - Header Top Light
-             * @return template
+             * Component - Header Nav Light
+             * @return component
              */
-            get_template_part('template-parts/components/header-top-light'); 
+            get_template_part('template-parts/components/nav/main/nav-main-light');
             ?>
 
-            <?php 
+            <?php
             /**
-             * Component - Header Nav Light
-             * @return template
+             * Component - Headband Woocommerce
+             * @return component
              */
-            get_template_part('template-parts/components/header-nav-light');
+            get_template_part('template-parts/components/headband/headband-woocommerce');
             ?>
 
             <?php 
             /**
              * Component - Mini Cart
-             * @return template
+             * @return component
              */
             get_template_part('template-parts/components/minicart'); 
             ?>

@@ -1,4 +1,43 @@
-<div class="header__main header__main--light"><!-- start//Header Nav -->
+<div class="header__top"><!-- start//Header Top -->
+    <div class="grid-container">
+        <div class="grid-x align-middle">
+            <div class="cell auto">
+
+                <h1 class="message-sale message-sale--light">
+                    <?= get_field('mesage_top','theme-info-contact')?><!-- Message Top -->
+                    <a href="<?= get_field('mesage_top_link','theme-info-contact')?>" class="link link--light">comprar ahora</a><!-- Message Top Link -->
+                </h1>
+
+            </div>
+            <div class="cell medium-2 large-3 show-for-large">
+                <div class="grid-x align-right"><!-- start//Links User -->
+
+                <?php if( class_exists("WooCommerce") ): ?>
+                    <?php if( is_user_logged_in() ): ?>
+
+                        <a href="<?= get_permalink( get_option('woocommerce_myaccount_page_id') );?>" class="link link--light"><small><span class="">MI CUENTA</span></small></a>
+
+                        <a style="margin-left:1rem" href="<?= wp_logout_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ) ?>" class="link link--light"><small><span class="">SALIR</span></small></a>
+
+                    <?php else: ?>
+
+                        <a href="<?= get_permalink( get_option('woocommerce_myaccount_page_id') );?>" class="link link--light"><small><span class="">LOGIN / REGISTRO</span></small></a>
+
+                    <?php endif; ?>
+
+                    <a class="button-cart button-cart--light" id="button-minicart-desktop"><!-- Button Mini Cart Desktop -->
+                        <i class="fal fa-shopping-cart"></i>
+                        <span class="button-cart__badge"><?= WC()->cart->get_cart_contents_count() ?></span>
+                    </a>
+                <?php endif; ?>
+                
+                </div><!-- ennd//Links User -->
+            </div>
+        </div>
+    </div>
+</div><!-- start//Header Top -->
+
+<div class="header__main header__main--light"><!-- start//Header Nav Main Light-->
     <div class="grid-container">
         <div class="grid-x align-middle">
             <div class="cell small-3 hide-for-large">
@@ -11,97 +50,95 @@
             <div class="cell small-6 large-2">
 
                 <figure class="logo" ><!-- Logo Carusso -->
-                    <a href="<?= get_home_url() ?>"><img src="<?= get_theme_file_uri('/static/images/')?>logo-carusso-white-2.svg" alt=""></a>
+                    <a href="<?= get_home_url() ?>">
+                        <img src="<?= get_theme_file_uri('/static/images/logo-carusso-white-2.svg')?>" alt="">
+                    </a>
                 </figure>
 
             </div>
             <div class="cell small-3 hide-for-large" style="text-align: right;">
 
-                <a href="" class="button-cart button-cart--light" id="button-minicart-mobile"> <!-- Button Mini Cart -->
+                <a href="" class="button-cart button-cart--light" id="button-minicart-mobile"><!-- Button Mini cart -->
                     <i class="fal fa-shopping-cart"></i><span class="button-cart__badge">0</span>
                 </a>
-            
+
             </div>
             <div class="cell large-7">
 
-                <div class="main-menu__background"></div><!-- Background Dark -->
+                <div class="main-menu__background"></div>
 
-                <nav class="main-menu" id="main-menu"><!-- start//Menu Container -->
-
+                <nav class="main-menu main-menu--light" id="main-menu"><!-- start//Nav Main Light -->
                     <?php
-                        /**
-                         * Component Woocommerce - Product SearchForm
-                         * @return template
-                         */
-                        get_template_part('woocommerce/product-searchform');
+                    /**
+                     * Component Product Search
+                     * @return component
+                     */
+                    get_template_part('woocommerce/product-searchform');
                     ?>
 
-                    <ul class="main-menu__container" id="main-menu"> <!-- start//Main Menu -->
+                    <ul class="main-menu__container" id="main-menu">
 
                         <li class="main-menu__item">
                             MENÚ
                             <span class="close-button close-button--mobile" id="button-close-menu"></span>
                         </li>
 
-                        <?php
+                            <?php
                             /**
-                             * Get Menu custom (App/functions/helpers)
+                             * Get Custom Menu (App/functions/helpers)
                              * @return array
                              */
                             $menu_primary = get_menu_custom('menu-header');
+
                             if( !empty($menu_primary) ):
                                 foreach ($menu_primary as $item) :
                                     if( $item->title == 'Hombre' || $item->title == 'Mujer'):
                                         ?>
                                         <li class="main-menu__item">
-                                            <a href="<?= $item->url ?>" class="main-menu__link"> 
+
+                                            <a href="<?= esc_url($item->url) ?>" class="main-menu__link"> 
                                                 <?= $item->title ?>                                                                                    
                                             </a>
-                                            <span class="main-menu__button" ><i class="fal fa-chevron-right"></i></span>
+                                            <span class="main-menu__button" ><i class="fal fa-chevron-right"></i></span>    
 
-                                            <ul class="main-children"> <!-- start//Main Menu Children -->
-                                                <?php 
+                                            <ul class="main-children"><!-- start//Nav Main Children -->
+                                                <?php
+
                                                 $parent = "";
                                                 
-                                                ( $item->title == 'Hombre' ) ? $parent = 'hombres' : $parent = 'mujeres';
-
+                                                ($item->title == 'Hombre') ? $parent = 'hombres' : $parent = 'mujeres' ;
+                                                
                                                 $categories = get_categories_woocommerce($parent);
 
                                                 foreach( $categories as $categorie ):
                                                     ?>
-
                                                     <li class="main-children__title">
-                                                        
-                                                        <a href="<?= esc_url(get_term_link( $categorie->slug, $categorie->taxonomy)); ?>">
+
+                                                        <a href="<?= esc_url( get_term_link( $categorie->slug, $categorie->taxonomy ) );?>">
                                                             <?= $categorie->name ?>
                                                         </a>
-                                                        
+
                                                         <ul class="main-children__container">                                                    
                                                     <?php
-                                                        $subcategories = get_categories_woocommerce($categorie->slug);
 
+                                                        $subcategories = get_categories_woocommerce($categorie->slug);
                                                         foreach( $subcategories as $subcategorie):
                                                             
                                                             $link = get_term_link( $subcategorie->slug, $subcategorie->taxonomy );
                                                             ?>
-
                                                             <li class="main-children__item">
-                                                                <a href="<?= $link?>" class="main-children__link">
-                                                                    <?= $subcategorie->name ?>
-                                                                </a>
+                                                                <a href="<?= esc_url($link); ?>" class="main-children__link"><?= $subcategorie->name ?></a>
                                                             </li>
-
                                                             <?php
                                                         endforeach;
                                                     ?>
                                                         </ul>
                                                     </li>
-                                                    <?php
+                                            <?php
                                                 endforeach;
-                                                
                                                 ?>
 
-                                            </ul> <!-- end//Main Menu Children -->
+                                            </ul><!-- end//Nav Main Children -->
                                         </li>
                                         <?php
                                     else:
@@ -113,12 +150,13 @@
                                         </li>
                                         <?php
                                     endif;
-                        ?>
+                                    ?>
                         
-                        <?php                                    
+                                    <?php                                    
                                 endforeach;
                             endif;
                         ?>
+                        
                         <?php // Woocommerce Conditional
                         if( class_exists("WooCommerce") ):
                             if( is_user_logged_in() ): ?>
@@ -139,52 +177,32 @@
 
                             <?php endif; ?>
                         <?php endif; ?>
-                        <li class="main-menu__item hide-for-large"> <!-- Button WhatsApp -->
-                            <a href="" class="button-header"><i class="fab fa-whatsapp"></i> CONTACTAR</a>
+
+                        <li class="main-menu__item hide-for-large">
+
+                            <a target="_blank" href="https://wa.me/51<?= get_field('whatsapp','theme-info-contact')?>" class="button-header"><!-- Button WhatsApp -->
+                                <i class="fab fa-whatsapp"></i> CONTACTAR
+                            </a>
+
                         </li>
-                    </ul><!-- end//Main Menu -->
-                </nav><!-- end//Menu Container-->
+                    </ul>
+                </nav><!-- end//Nav Main Light -->
             </div>
             <div class="cell large-3 show-for-large">
                 <div class="grid-x align-right">
+                    <div class="buscador">
 
-                    <div class="buscador"><!-- Button Search -->
-                        <button type="button" class="button-search button-search--light" id="button-open-search">
+                        <button type="button" class="button-search button-search--light" id="button-open-search"><!-- Button Search Desktop -->
                             <i class="fal fa-search"></i>
                         </button>
-                    </div>
 
+                    </div>
+                    
                     <a target="_blank" href="https://wa.me/51<?= get_field('whatsapp','theme-info-contact')?>" class="button-header button-header--light"><!-- Button WhatsApp -->
                         <i class="fab fa-whatsapp"></i> CONTACTAR
                     </a>
-
                 </div>
             </div>
         </div>
     </div>
-    <div class="grid-container">
-        <div class="header__main-list">
-
-                <ul class="header__main-list-container">
-                    <?php if( is_account_page() ): ?>
-                        <a class="header__main-list-link"> <?= the_title(); ?></a>
-                    <?php elseif( is_page('politica-privacidad') ): ?>
-                        <h3 class="header__main-list-link"><?= the_title(); ?></h3>
-                    <?php elseif( is_page('ofertas') ): ?>
-                        <h3 class="header__main-list-link"><?= the_title(); ?></h3>
-                    <?php else: ?>
-                    <li class="header__main-list-item <?= ( is_cart() ) ? 'active' : '' ?>">
-                        <a href="<?= wc_get_cart_url();?> " class="header__main-list-link">Carrito</a>
-                    </li>
-                    <li class="header__main-list-item <?= ( is_checkout() ) ? 'active' : '' ?>">
-                        <a href="<?= wc_get_checkout_url();?> " class="header__main-list-link">Finalizar Compra</a>
-                    </li>
-                    <li class="header__main-list-item <?= ( is_wc_endpoint_url( 'order-received' ) ) ? 'active' : '' ?>">
-                        <a href="" class="header__main-list-link">Orden Completa</a>
-                    </li>
-                    <?php endif; ?>
-                </ul>
-
-        </div>
-    </div>
-</div><!-- end//Header Nav -->
+</div><!-- start//Header Nav Main Light-->

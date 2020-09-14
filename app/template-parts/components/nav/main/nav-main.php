@@ -1,3 +1,42 @@
+<div class="header__top"><!-- start//Header Top -->
+    <div class="grid-container">
+        <div class="grid-x align-middle">
+            <div class="cell auto">
+
+                <h1 class="message-sale">
+                    <?= get_field('mesage_top','theme-info-contact')?> <!-- Message Top -->
+                    <a href="<?= get_field('mesage_top_link','theme-info-contact')?>" class="link">comprar ahora</a> <!-- Message Top Link -->
+                </h1>
+
+            </div>
+            <div class="cell medium-2 large-3 show-for-large">
+                <div class="grid-x align-right"><!-- start//Links User -->
+
+                <?php if( class_exists("WooCommerce") ): ?>
+                    <?php if( is_user_logged_in() ): ?>
+                        
+                        <a href="<?= get_permalink( get_option('woocommerce_myaccount_page_id') );?>" class="link"><small><span class="">MI CUENTA</span></small></a> 
+                        
+                        <a style="margin-left:1rem" href="<?= wp_logout_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ) ?>" class="link"><small><span class="">SALIR</span></small></a>
+
+                    <?php else: ?>
+
+                        <a href="<?= get_permalink( get_option('woocommerce_myaccount_page_id') );?>" class="link"><small><span class="">LOGIN / REGISTRO</span></small></a>
+
+                    <?php endif; ?>
+
+                    <a class="button-cart" id="button-minicart-desktop"><!-- Button Mini Cart Desktop -->
+                        <i class="fal fa-shopping-cart"></i>
+                        <span class="button-cart__badge"><?= WC()->cart->get_cart_contents_count() ?></span>
+                    </a>
+                <?php endif; ?>
+
+                </div><!-- ennd//Links User -->
+            </div>
+        </div>
+    </div>
+</div><!-- end//Header Top -->
+
 <div class="header__main"><!-- start//Header Nav -->
     <div class="grid-container">
         <div class="grid-x align-middle">
@@ -43,7 +82,7 @@
                             <span class="close-button close-button--mobile" id="button-close-menu"></span><!-- Button Close Menu -->
                         </li>
 
-                        <?php
+                            <?php
                             /**
                              * Get Menu custom (App/functions/helpers)
                              * @return array
@@ -52,8 +91,7 @@
                             if( !empty($menu_primary) ):
                                 foreach ($menu_primary as $item) :
                                     if( $item->title == 'Hombre' || $item->title == 'Mujer'):
-                        ?>
-
+                                    ?>
                                         <li class="main-menu__item">
                                             <a href="<?= $item->url ?>" class="main-menu__link"> 
                                                 <?= $item->title ?>                                                                                    
@@ -61,7 +99,7 @@
                                             <span class="main-menu__button" ><i class="fal fa-chevron-right"></i></span>
 
                                             <ul class="main-children"> <!-- start//Main Menu Children -->
-                        <?php
+                                            <?php
                                                 $parent = "";
                                                 
                                                 ( $item->title == 'Hombre' ) ? $parent = 'hombres' : $parent = 'mujeres';                                                   
@@ -69,7 +107,7 @@
                                                 $categories = get_categories_woocommerce($parent);
 
                                                 foreach( $categories as $categorie ):
-                        ?>
+                                            ?>
                                                     <li class="main-children__title">
                                                         
                                                         <a href="<?= esc_url(get_term_link( $categorie->slug, $categorie->taxonomy)); ?>">
@@ -77,31 +115,31 @@
                                                         </a>
                                                         
                                                         <ul class="main-children__container">                                                    
-                        <?php
+                                                        <?php
 
                                                         $subcategories = get_categories_woocommerce($categorie->slug);
                                                         foreach( $subcategories as $subcategorie):                                                            
                                                             $link = get_term_link( $subcategorie->slug, $subcategorie->taxonomy );
-                        ?>
+                                                        ?>
 
                                                             <li class="main-children__item">
                                                                 <a href="<?= $link?>" class="main-children__link"><?= $subcategorie->name ?></a>
                                                             </li>
 
-                        <?php
+                                                        <?php
                                                         endforeach;
-                        ?>
+                                                        ?>
                                                         </ul>
                                                     </li>
-                        <?php
+                                                <?php
                                                 endforeach;
-                        ?>
+                                                ?>
 
                                             </ul> <!-- end//Main Menu Children -->
                                         </li>
                                         <?php
                                     else:
-                        ?>
+                                    ?>
 
                                         <li class="main-menu__item">
                                             <a href="<?= $item->url ?>" class="main-menu__link"> 
@@ -109,11 +147,11 @@
                                             </a>
                                         </li>
 
-                        <?php
+                                    <?php
                                     endif;
-                        ?>
+                                    ?>
                         
-                        <?php                                  
+                                <?php                                  
                                 endforeach;
                             endif;
                         ?>
@@ -141,7 +179,9 @@
                             <?php endif; ?>
 
                         <li class="main-menu__item hide-for-large"> <!-- Button WhatsApp -->
-                            <a href="" class="button-header"><i class="fab fa-whatsapp"></i> CONTACTAR</a>
+                            <a target="_blank" href="https://wa.me/51<?= get_field('whatsapp','theme-info-contact')?>" class="button-header">
+                                <i class="fab fa-whatsapp"></i> CONTACTAR
+                            </a>
                         </li>
                     </ul><!-- end//Main Menu -->
                 </nav><!-- end//Menu Container-->
@@ -164,4 +204,3 @@
         </div>
     </div>
 </div><!-- end//Header Nav -->
-

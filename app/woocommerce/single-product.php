@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header( 'default' ); ?>
+get_header(); ?>
 <section class="section">
     <div class="grid-container">
 	<?php

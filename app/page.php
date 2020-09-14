@@ -22,12 +22,12 @@ elseif( is_page('contacto') ):
 
 elseif( is_page('guia-de-tallas') ):
 
-    get_header('account');
+    get_header('breadcum');
     get_template_part('template-parts/pages/guia-de-tallas');
 
 elseif( is_page('ofertas') || is_page('novedades') ):
 
-    get_header('account');
+    get_header('breadcum');
     get_template_part('template-parts/pages/ofertas');
 
 elseif( is_cart() || is_checkout() ):
@@ -37,12 +37,12 @@ elseif( is_cart() || is_checkout() ):
 
 elseif( is_account_page() ):
 
-    get_header('account');
+    get_header('breadcum');
     get_template_part('template-parts/content/woocommerce');
 
 else:
 
-    get_header('account');
+    get_header('breadcum');
     get_template_part('template-parts/content/content');
 
 endif;

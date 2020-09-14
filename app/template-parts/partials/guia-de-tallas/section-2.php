@@ -5,13 +5,13 @@
 
         <div class="grid-x align-center margin-x margin-y">
 
-            <div class="cell medium-4">
+            <div class="cell medium-3">
                 <figure style="max-width: 300px;">
                     <img src="<?= get_theme_file_uri('/static/images/como-medir-pie.jpg') ?>" alt="">
                 </figure>
             </div>
 
-            <div class="cell medium-4">
+            <div class="cell medium-6">
                 <ol>
                     <li>Pon una hoja en blaco en el piso y contra la pared.</li>
                     <li>Pon tu pie encima de la hoja, de manera que tu talón esté contra la pared. Tú decides si haces la medida con o sin medidas, dependiendo de cómo uses generalmente tus zapatos. </li>
