@@ -3,6 +3,8 @@ import './foundation/foundation-explicit-pieces'
 
 $(document).foundation();
 
+//window.addEventListener('contextmenu', ev => ev.preventDefault());
+
 $(function() {
 
   /**

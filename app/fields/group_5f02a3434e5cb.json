@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5f02a34378bde",
-            "label": "Slider Home",
+            "label": "Slider Hombre",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -17,33 +17,6 @@
             },
             "placement": "top",
             "endpoint": 0
-        },
-        {
-            "key": "field_5f02a34378f98",
-            "label": "Imágenes",
-            "name": "slider_primary",
-            "type": "gallery",
-            "instructions": "Debe recordar de subir imágenes con una buena resolución",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "medium",
-            "insert": "append",
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
         },
         {
             "key": "field_5f02a3437938b",
@@ -459,5 +432,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1596857820
+    "modified": 1606240672
 }

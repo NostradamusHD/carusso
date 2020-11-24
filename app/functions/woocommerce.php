@@ -147,6 +147,22 @@ if(class_exists("Woocommerce")):
             );
     }
 
+    /**
+     * Change Num colums on page shop
+     */
+
+    add_filter('loop_shop_columns', 'loop_columns', 999);
+
+    if (!function_exists('loop_columns')) {
+    
+         function loop_columns() {
+        
+         return 3;
+        
+         }
+    
+    }
+
     /** Variaciones de productos en la página principal de la tienda **/
 
     /*

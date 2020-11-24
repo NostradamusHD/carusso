@@ -79,6 +79,8 @@
           margin: 0.5rem 0;
 
           &-item {
+            cursor: pointer !important;
+            border: none;
             width: 15px;
             height: 15px;
             border-radius: 50%;

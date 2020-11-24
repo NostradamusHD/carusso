@@ -1,3 +1,10 @@
+<?php
+$slider = get_field('imagenes');
+// dd($slider);
+if(empty($slider)) {
+    return;
+}
+?>
 <!-- Start | Main Slider -->
 <div class="slider-main" data-aos="fade-in" data-aos-delay="200">
     <div class="swiper-container" id="slider-main">
@@ -6,17 +13,37 @@
                 /**
                  * Get Advance Custom Field - Datos Home / Slider Home
                  */
-                $slider = get_field('slider_primary');
+                // $slider = get_field('slider_primary');
 
-                if( !empty($slider) ):
-                    foreach ($slider as $item):
+                // if( !empty($slider) ):
+                //     foreach ($slider as $item):
             ?>
-                    <div class="swiper-slide">
+                    <!-- <div class="swiper-slide">
                         <img src="<?= esc_url($item); ?>" />
-                    </div>
+                    </div> -->
             <?php
-                    endforeach;
-                endif;
+                //     endforeach;
+                // endif;
+            ?>
+
+
+            <?php
+            
+            foreach($slider as $row):
+                ?>
+                <div class="swiper-slide">
+                    <div class="img-version img-mobile">
+                        <img src="<?= $row['version_mobile']['url'] ?>" alt="">
+                    </div>
+                    <div class="img-version img-tablet">
+                        <img src="<?= $row['version_tablet']['url'] ?>">
+                    </div>
+                    <div class="img-version img-desktop">                            
+                        <img src="<?= $row['version_desktop']['url'] ?>">
+                    </div>
+                </div>
+                <?php
+            endforeach;
             ?>
         </div><!-- start//Wrapper -->
         
