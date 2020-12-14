@@ -2,7 +2,15 @@
     <div class="grid-container">
         <div class="grid-x align-middle">
             <div class="cell auto">
-                <h1 class="message-sale message-sale--light"><?= get_field('mesage_top','theme-info-contact')?> <a href="<?= get_field('mesage_top_link','theme-info-contact')?>" class="link link--light">comprar ahora</a></h1>
+                <?php
+                    if(get_field('mesage_top','theme-info-contact')):
+                        ?>
+                        <h1 class="message-sale message-sale--light">
+                            <?= get_field('mesage_top','theme-info-contact')?> <a href="<?= get_field('mesage_top_link','theme-info-contact')?>" class="link link--light">comprar ahora</a>
+                        </h1>
+                        <?php
+                    endif;
+                ?>
             </div>
             <div class="cell medium-2 large-3 show-for-large">
                 <div class="grid-x align-right">

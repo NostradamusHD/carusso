@@ -4,7 +4,7 @@ const slideHome = new Swiper('#slider-main',{
   autoplay: {
     delay: 3000
   },
-  loop:true,
+  // loop:true,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
